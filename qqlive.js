@@ -9,7 +9,7 @@
             successDiv = findSickDiv();
         }
         if (successLink == false) {
-            successLink = findsickLink();
+            successLink = findSickLink();
         }
         loopCount++;
         if ((successDiv && successLink) || loopCount > 20) {
@@ -21,16 +21,16 @@
         clearInterval(inte);
     }
 
-    function findsickLink() {
-        var links = document.getElementsByTagName('a');
+    function findSickLink(container) {
         var continueLinkRemove;
-        for (var i = 0; i < links.length; i++) {
-            var element = links[i];
-            if (!element.href) {
-                continueLinkRemove = element;
+        for (var i = 0; i < container.childNodes.length; i++) {
+            var currentNode = container.childNodes[i];
+            if (currentNode.nodeName === 'A') {
+                continueLinkRemove = currentNode;
                 break;
             }
-        };
+        }
+
         if (continueLinkRemove) {
             continueLinkRemove.remove();
             console.log("恶心链接删除成功");
@@ -57,9 +57,13 @@
         if (continueRemove) {
             continueRemove.style = null;
             console.log("烦人背景删除成功");
+            findSickLink(continueRemove);
             return true;
         }
 
         return false;
     }
+
+
+
 })();
