@@ -2,15 +2,12 @@
     var inte = setInterval(lookElements, 1000);
     var loopCount = 0;
     var successDiv = false;
-    var successLink = false;
 
     function lookElements() {
         if (successDiv == false) {
-            successDiv = findSickDiv();
+            findSickDiv();
         }
-        if (successLink == false) {
-            successLink = findSickLink();
-        }
+
         loopCount++;
         if ((successDiv && successLink) || loopCount > 20) {
             clearInte();
@@ -34,10 +31,7 @@
         if (continueLinkRemove) {
             continueLinkRemove.remove();
             console.log("恶心链接删除成功");
-            return true;
         }
-
-        return false;
     }
 
     function findSickDiv() {
@@ -57,13 +51,9 @@
         if (continueRemove) {
             continueRemove.style = null;
             console.log("烦人背景删除成功");
+            successDiv = true;
             findSickLink(continueRemove);
-            return true;
         }
-
-        return false;
     }
-
-
 
 })();
