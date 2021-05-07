@@ -55,7 +55,7 @@
         }
 
         if (continueRemove) {
-            continueRemove.remove();
+            continueRemove.style = null;
             console.log("烦人背景删除成功");
             return true;
         }
