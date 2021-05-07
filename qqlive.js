@@ -9,7 +9,7 @@
         }
 
         loopCount++;
-        if ((successDiv && successLink) || loopCount > 20) {
+        if (successDiv || loopCount > 20) {
             clearInte();
         }
     }
