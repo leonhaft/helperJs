@@ -2,7 +2,7 @@
   var inte = setInterval(lookElements, 1000);
   var loopCount = 0;
   var successDiv = false;
-  var sickBackgroundImageRegex = /\w{1,}.jpg$/g;
+  var sickBackgroundImageRegex = /\w{10,}.jpg/g;
   function lookElements() {
     if (successDiv == false) {
       findSickDiv();
