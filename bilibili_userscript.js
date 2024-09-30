@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         QQ Live Block
+// @name         B站 Block
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  删除企鹅直播讨厌的F1背景
+// @description  删除B站恶心的首页背景图片
 // @author       You
 // @match        *://*.bilibili.com/*
 // @grant        none
