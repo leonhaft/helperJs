@@ -19,21 +19,19 @@
   }
 
   function findSickLink(container) {
-    var continueLinkRemove;
+    var continueLinkRemove = [];
     for (var i = 0; i < container.childNodes.length; i++) {
       var currentNode = container.childNodes[i];
       if (currentNode.nodeName === "A") {
-        var href = currentNode.getAttribute("href");
-        if (href.length == 0) {
-          continueLinkRemove = currentNode;
-          break;
-        }
+        continueLinkRemove.push(currentNode);
       }
     }
 
     if (continueLinkRemove) {
-      continueLinkRemove.remove();
-      console.log("恶心链接删除成功");
+      for (var i = 0; i < continueLinkRemove.length; i++) {
+        continueLinkRemove[i].remove();
+        console.log("恶心链接删除成功");
+      }
     }
   }
 
