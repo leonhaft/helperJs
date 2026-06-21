@@ -26,11 +26,12 @@
         continueLinkRemove.push(currentNode);
       }
     }
-
+    console.log("找到链接的数量", continueLinkRemove.length);
     if (continueLinkRemove) {
       for (var i = 0; i < continueLinkRemove.length; i++) {
+        
+        console.log("删除恶心链接",continueLinkRemove[i].href);
         continueLinkRemove[i].remove();
-        console.log("恶心链接删除成功");
       }
     }
   }
@@ -55,8 +56,9 @@
     }
 
     if (continueRemove) {
+      const styleDelete = continueRemove.style;
       continueRemove.style = null;
-      console.log("烦人背景删除成功");
+      console.log("烦人背景删除成功", styleDelete);
       successDiv = true;
       findSickLink(continueRemove);
     }
