@@ -5,6 +5,7 @@
 // @description  删除B站恶心的首页背景图片
 // @author       You
 // @match        *://*.bilibili.com/*
+// @match        *://tjyaoying.cn/*
 // @grant        none
 // @run-at       document-start
 // ==/UserScript==
